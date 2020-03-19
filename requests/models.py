@@ -9,6 +9,7 @@ This module contains the primary objects that power Requests.
 
 import datetime
 import sys
+from icecream import ic
 
 # Import encoding now, to avoid implicit import later.
 # Implicit import within threads may cause LookupError when standard library is in a ZIP,
@@ -743,7 +744,7 @@ class Response(object):
         If decode_unicode is True, content will be decoded using the best
         available encoding based on the response.
         """
-
+        ic(chunk_size)
         def generate():
             # Special case for urllib3.
             if hasattr(self.raw, 'stream'):
