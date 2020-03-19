@@ -12,6 +12,7 @@ import sys
 import time
 from datetime import timedelta
 from collections import OrderedDict
+from icecream import ic
 
 from .auth import _basic_auth_str
 from .compat import cookielib, is_py3, urljoin, urlparse, Mapping
@@ -500,6 +501,7 @@ class Session(SessionRedirectMixin):
             If Tuple, ('cert', 'key') pair.
         :rtype: requests.Response
         """
+        ic(timeout, stream)
         # Create the Request.
         req = Request(
             method=method.upper(),
