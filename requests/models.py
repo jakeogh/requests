@@ -744,8 +744,8 @@ class Response(object):
         If decode_unicode is True, content will be decoded using the best
         available encoding based on the response.
         """
-        ic(chunk_size)
         def generate():
+            ic(chunk_size)
             # Special case for urllib3.
             if hasattr(self.raw, 'stream'):
                 try:
